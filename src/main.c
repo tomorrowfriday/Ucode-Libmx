@@ -3,8 +3,8 @@
 int main(){
     // mx_printchar('f');
 
-//void mx_print_strarr(char **arr, const char *delim)
-    // char *arr[] = {"world", "hello", /*"NULL"*/};
+// //void mx_print_strarr(char **arr, const char *delim)
+    // char *arr[] = {"world", "hello", NULL};
     // mx_print_strarr(arr, "_");
 
 //int mx_bubble_sort(int *arr, int size)
