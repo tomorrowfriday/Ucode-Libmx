@@ -5,7 +5,8 @@ CFLAGS = -std=c11 -Wall -Wextra -Werror -Wpedantic -g
 SOURCES = main.c mx_printchar.c mx_printstr.c mx_printint.c mx_pow.c mx_sqrt.c \
 mx_foreach.c mx_binary_search.c mx_strlen.c mx_strcpy.c mx_strcmp.c \
 mx_strnew.c mx_strdup.c mx_print_strarr.c mx_bubble_sort.c mx_quicksort.c mx_itoa.c \
-mx_print_unicode.c mx_swap_char.c
+mx_print_unicode.c mx_swap_char.c mx_nbr_to_hex.c mx_str_reverse.c mx_strjoin.c mx_strdel.c \
+mx_del_strarr.c
 
 SRCD = src
 SRCS = $(addprefix $(SRCD)/, $(SOURCES))

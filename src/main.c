@@ -3,7 +3,7 @@
 int main(){
     // mx_printchar('f');
 
-// //void mx_print_strarr(char **arr, const char *delim)
+//void mx_print_strarr(char **arr, const char *delim)
     // char *arr[] = {"world", "hello", NULL};
     // mx_print_strarr(arr, "_");
 
@@ -121,4 +121,36 @@ int main(){
     // printf("%s \n", str);
     // mx_swap_char(&str[1], &str[2]);
     // printf("%s \n", str);
+
+// char *mx_nbr_to_hex(unsigned long nbr)
+    // mx_printstr(mx_nbr_to_hex(52));    
+    // mx_printchar('\n');
+    // mx_printstr(mx_nbr_to_hex(1000));
+    // mx_printchar('\n');
+    // mx_printstr(mx_nbr_to_hex(52));
+    // mx_printchar('\n');
+    // mx_printstr(mx_nbr_to_hex(1025135));
+
+// char *mx_strjoin(const char *s1, const char *s2)
+    // char s1[] = "this";
+    // char s2[] = "dodge ";
+    // char *s3 = NULL;
+    // mx_printstr(mx_strjoin(s2, s1)); 
+    // mx_printchar('\n');
+    // // mx_printstr(mx_strjoin(s1, s3));
+    // // mx_printchar('\n');
+    // mx_printstr(mx_strjoin(s3, s3));   
+// void mx_strdel(char **str) 
+    // char *str = "Hello world!";
+    // mx_strdel(*str);
+    // mx_printstr(str);
+// void mx_del_strarr(char ***arr)
+    char *arr[] = {"Hello", "World" , NULL};
+    printf("%s\n", arr[0]);
+    printf("%s\n", arr[1]);
+    printf("%s\n", arr[2]);
+    mx_del_strarr(**arr);
+    printf("%s\n", arr[0]);
+    printf("%s\n", arr[1]);
+    printf("%s\n", arr[2]);
 }

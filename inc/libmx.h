@@ -24,5 +24,10 @@ int mx_quicksort(int *arr, int left, int right);
 char *mx_itoa(int num);
 void mx_print_unicode(wchar_t c);
 void mx_swap_char(char *s1, char *s2);
+char *mx_nbr_to_hex(unsigned long nbr);
+void mx_str_reverse(char *s);
+char *mx_strjoin(const char *s1, const char *s2);
+void mx_del_strarr(char ***arr);
+
 //int mx_itoa(int num);
 
