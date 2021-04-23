@@ -141,16 +141,17 @@ int main(){
     // // mx_printchar('\n');
     // mx_printstr(mx_strjoin(s3, s3));   
 // void mx_strdel(char **str) 
-    // char *str = "Hello world!";
-    // mx_strdel(*str);
-    // mx_printstr(str);
+    char *str = "Hello world!";
+    mx_printstr(str);
+    mx_strdel((char **)str);
+    mx_printstr(str);
 // void mx_del_strarr(char ***arr)
-    char *arr[] = {"Hello", "World" , NULL};
-    printf("%s\n", arr[0]);
-    printf("%s\n", arr[1]);
-    printf("%s\n", arr[2]);
-    mx_del_strarr(**arr);
-    printf("%s\n", arr[0]);
-    printf("%s\n", arr[1]);
-    printf("%s\n", arr[2]);
+    // char *arr[] = {"Hello", "World" , NULL};
+    // printf("%s\n", arr[0]);
+    // printf("%s\n", arr[1]);
+    // printf("%s\n", arr[2]);
+    // mx_del_strarr((char ***)arr);
+    // printf("%s\n", arr[0]);
+    // printf("%s\n", arr[1]);
+    // printf("%s\n", arr[2]);
 }
