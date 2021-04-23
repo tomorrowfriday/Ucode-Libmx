@@ -158,14 +158,14 @@ int main(){
     // printf("%s\n", arr[1]);
     // printf("%s\n", arr[2]);
 //void* my_memset(void *b, int c, size_t len)
-    char *str = "Hello world!";
-    mx_printstr(str);
-    mx_memset(str, 1, 12);
-    mx_printstr(str);
-    char *str2 = "Hello world!";
-    mx_printstr(str2);
-    memset(str2, 1, 12);
-    mx_printstr(str2);
+    // char *str = "Hello world!";
+    // mx_printstr(str);
+    // mx_memset(str, 1, 12);
+    // mx_printstr(str);
+    // char *str2 = "Hello world!";
+    // mx_printstr(str2);
+    // memset(str2, 1, 10);
+    // mx_printstr(str2);
 
     
     
