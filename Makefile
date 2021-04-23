@@ -1,39 +1,35 @@
-NAME = libmx.a
-CC = clang
-CFLAGS = -std=c11 -Wall -Wextra -Werror -Wpedantic -g
-
-SOURCES = main.c mx_printchar.c mx_printstr.c mx_printint.c mx_pow.c mx_sqrt.c \
+NAME  =     libmx.a
+CFLG  =     -std=c11 -Wall -Wextra -Werror -Wpedantic -g
+COMP  =     clang
+SRCD  =     src
+INCD  =     inc
+OBJD  =     obj
+INC         =     libmx.h
+INCS  =     $(addprefix $(INCD)/, $(INC))
+SRC   =     mx_printchar.c mx_printstr.c mx_printint.c mx_pow.c mx_sqrt.c \
 mx_foreach.c mx_binary_search.c mx_strlen.c mx_strcpy.c mx_strcmp.c \
 mx_strnew.c mx_strdup.c mx_print_strarr.c mx_bubble_sort.c mx_quicksort.c mx_itoa.c \
 mx_print_unicode.c mx_swap_char.c mx_nbr_to_hex.c mx_str_reverse.c mx_strjoin.c mx_strdel.c \
-mx_del_strarr.c
-
-SRCD = src
-SRCS = $(addprefix $(SRCD)/, $(SOURCES))
-
-INCD = inc
-INC = libmx.h
-INCS = $(addprefix $(INCD)/, $(INC))
-
-OBJDIR = obj
-OBJECTS = $(SOURCES:.c=.o)
-#OBJ = $(addprefix $(OBJDIR)/, $(patsubst %.c, %.o, $(wildcard *.c)))
-OBJ = $(addprefix $(OBJDIR)/, $(SOURCES:%.c=%.o))
-
-all:$(OBJDIR) install
-
-install:$(NAME)
-$(NAME): $(OBJ)
-	$(CC) $(OBJ) -o libmx.a
-
-$(OBJDIR)/%.o:$(SRCD)/%.c $(INCS) 
-	@$(CC) $(CFLAGS) -I$(INCD) -c $< -o $@ 
-
-#$(OBJS): | $(OBJDIR)
-
-$(OBJDIR):
-	mkdir $(OBJDIR)
-
+mx_del_strarr.c mx_memset.c
+SRCS  =     $(addprefix $(SRCD)/, $(SRC))
+OBJS  =     $(addprefix $(OBJD)/, $(SRC:%.c=%.o))
+all: install clean
+install: $(NAME)
+$(NAME): $(OBJS)
+	@ar rcs $@ $^
+	@printf "\r\33[2K$@\t   \033[32;1mcreated\033[0m\n"
+$(OBJD)/%.o: $(SRCD)/%.c $(INCS)
+	@$(COMP) $(CFLG) -c $< -o $@ -I$(INCD)
+	@printf "\r\33[2K$(NAME)\t   \033[33;1mcompile \033[0m$(<:$(SRCD)/%.c=%) "
+$(OBJS): | $(OBJD)
+$(OBJD):
+	@mkdir -p $@
 clean:
-	@rm -f $(NAME) $(wildcard *.o)
-	@rm -rf $(OBJDIR)
+	@rm -rf $(OBJD)
+	@printf "$(OBJD)\t   \033[31;1mdeleted\033[0m\n"
+uninstall: clean
+	@rm -rf $(NAME)
+	@printf "$(NAME)\t   \033[31;1muninstalled\033[0m\n"
+reinstall: uninstall install
+start: 
+	clang -std=c11 -Wall -Wextra -Werror -Wpedantic main.c libmx.a && ./a.out

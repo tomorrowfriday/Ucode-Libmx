@@ -5,7 +5,6 @@
 #include <locale.h>
 #include <wchar.h>
 
-
 void mx_printchar(char c);
 void mx_printstr(const char *s);
 void mx_printint(int n);
@@ -29,6 +28,7 @@ void mx_str_reverse(char *s);
 char *mx_strjoin(const char *s1, const char *s2);
 void mx_strdel(char **str);
 void mx_del_strarr(char ***arr);
+void *mx_memset(void *b, int c, size_t len);
 
 //int mx_itoa(int num);
 

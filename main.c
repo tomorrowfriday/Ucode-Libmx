@@ -1,4 +1,4 @@
-#include "libmx.h"
+#include "inc/libmx.h"
 
 int main(){
     // mx_printchar('f');
@@ -123,7 +123,7 @@ int main(){
     // printf("%s \n", str);
 
 // char *mx_nbr_to_hex(unsigned long nbr)
-    // mx_printstr(mx_nbr_to_hex(52));    
+    // mx_printstr(mx_nbr_to_hex(52));
     // mx_printchar('\n');
     // mx_printstr(mx_nbr_to_hex(1000));
     // mx_printchar('\n');
@@ -132,19 +132,22 @@ int main(){
     // mx_printstr(mx_nbr_to_hex(1025135));
 
 // char *mx_strjoin(const char *s1, const char *s2)
-    // char s1[] = "this";
-    // char s2[] = "dodge ";
+    // char *s1 = "this";
+    // char *s2 = "dodge ";
     // char *s3 = NULL;
     // mx_printstr(mx_strjoin(s2, s1)); 
     // mx_printchar('\n');
-    // // mx_printstr(mx_strjoin(s1, s3));
-    // // mx_printchar('\n');
+    // mx_printstr(mx_strjoin(s1, s3));
+    // mx_printchar('\n');
+    // printf("%s\n", mx_strjoin(s3, s3));
     // mx_printstr(mx_strjoin(s3, s3));   
 // void mx_strdel(char **str) 
-    char *str = "Hello world!";
-    mx_printstr(str);
-    mx_strdel((char **)str);
-    mx_printstr(str);
+    // char *str = malloc(13);
+    // mx_strcpy(str, "Hello world!");
+    // mx_printstr(str);
+    // mx_printchar('\n');
+    // mx_strdel((char **)str);
+    // mx_printstr(str); 
 // void mx_del_strarr(char ***arr)
     // char *arr[] = {"Hello", "World" , NULL};
     // printf("%s\n", arr[0]);
@@ -154,4 +157,16 @@ int main(){
     // printf("%s\n", arr[0]);
     // printf("%s\n", arr[1]);
     // printf("%s\n", arr[2]);
-}
+//void* my_memset(void *b, int c, size_t len)
+    char *str = "Hello world!";
+    mx_printstr(str);
+    mx_memset(str, 1, 12);
+    mx_printstr(str);
+    char *str2 = "Hello world!";
+    mx_printstr(str2);
+    memset(str2, 1, 12);
+    mx_printstr(str2);
+
+    
+    
+    }
