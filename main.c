@@ -1,6 +1,7 @@
-#include "inc/libmx.h"
+#include "libmx.h"
 
 int main(){
+
     // mx_printchar('f');
 
 //void mx_print_strarr(char **arr, const char *delim)
@@ -140,7 +141,8 @@ int main(){
     // mx_printstr(mx_strjoin(s1, s3));
     // mx_printchar('\n');
     // printf("%s\n", mx_strjoin(s3, s3));
-    // mx_printstr(mx_strjoin(s3, s3));   
+    // mx_printstr(mx_strjoin(s3, s3)); 
+
 // void mx_strdel(char **str) 
     // char *str = malloc(13);
     // mx_strcpy(str, "Hello world!");
@@ -148,6 +150,7 @@ int main(){
     // mx_printchar('\n');
     // mx_strdel((char **)str);
     // mx_printstr(str); 
+
 // void mx_del_strarr(char ***arr)
     // char *arr[] = {"Hello", "World" , NULL};
     // printf("%s\n", arr[0]);
@@ -157,16 +160,44 @@ int main(){
     // printf("%s\n", arr[0]);
     // printf("%s\n", arr[1]);
     // printf("%s\n", arr[2]);
+
 //void* my_memset(void *b, int c, size_t len)
     // char *str = "Hello world!";
     // mx_printstr(str);
+    // mx_printchar('\n');
     // mx_memset(str, 1, 12);
     // mx_printstr(str);
     // char *str2 = "Hello world!";
     // mx_printstr(str2);
-    // memset(str2, 1, 10);
-    // mx_printstr(str2);
+    // mx_printchar('\n');
+    // memset(str2, 'A', sizeof(char)*10);
+    // printf("%c\n", str2[2]);
 
-    
-    
-    }
+//char *mx_file_to_str(const char *file)
+    // // mx_printint(mx_file_len("test.txt")); 
+    // mx_printstr(mx_file_to_str("test.txt"));
+    // mx_printchar('\n');
+    // // printf("%s\n", mx_file_to_str("test.txt"));
+
+//char *mx_strndup(const char *src, size_t n)
+    // char *src = "Hello!";
+    // printf("%s\n", mx_strndup(src, 4));
+
+//void *mx_memcpy(void *restrict dst, const void *restrict src, size_t n)
+    // char src[20] = "How Are you ?"; //Source String
+    // char dst[20] = {0}; //dst buffer
+    // //copy source buffer int dst
+    // mx_memcpy(dst,src,sizeof(src));
+    // printf("dst = %s\n", dst);
+
+//int mx_memcmp(const void *s1, const void *s2, size_t n)
+    // char src[20] = "How Are you?"; //Source String
+    // char dst[20] = "How Are we?"; //dst buffer
+    // printf("%d\n", mx_memcmp(dst, src, sizeof(dst)));
+
+//void *mx_realloc(void *ptr, size_t size)
+    char ptr[] = "Hello World!";
+    size_t len1 = mx_getsize(ptr);
+    size_t len2 = mx_getsize(mx_realloc(ptr, (mx_getsize(ptr) + 1)));
+    printf("1 = %zu, 2 = %zu", len1, len2);
+}

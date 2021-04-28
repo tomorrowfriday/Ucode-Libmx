@@ -4,6 +4,9 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <wchar.h>
+#include <malloc.h>
+#include <fcntl.h>
+#include <stddef.h>
 
 void mx_printchar(char c);
 void mx_printstr(const char *s);
@@ -29,6 +32,15 @@ char *mx_strjoin(const char *s1, const char *s2);
 void mx_strdel(char **str);
 void mx_del_strarr(char ***arr);
 void *mx_memset(void *b, int c, size_t len);
+int mx_file_len(const char *file);
+char *mx_file_to_str(const char *file);
+char *mx_strncpy(char *dst, const char *src, int len);
+char *mx_strndup(const char *src, size_t n);
+unsigned long mx_hex_to_nbr(const char *hex);
+void *mx_memcpy(void *restrict dst, const void *restrict src, size_t n);
+int mx_memcmp(const void *s1, const void *s2, size_t n);
+void *mx_realloc(void *ptr, size_t size);
+size_t mx_getsize(void * p);
 
 //int mx_itoa(int num);
 
