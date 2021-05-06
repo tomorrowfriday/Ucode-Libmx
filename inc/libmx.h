@@ -8,6 +8,12 @@
 #include <fcntl.h>
 #include <stddef.h>
 
+typedef struct s_list
+{
+    void *data;
+    struct s_list *next;
+} t_list;
+
 void mx_printchar(char c);
 void mx_printstr(const char *s);
 void mx_printint(int n);
@@ -41,6 +47,10 @@ void *mx_memcpy(void *restrict dst, const void *restrict src, size_t n);
 int mx_memcmp(const void *s1, const void *s2, size_t n);
 void *mx_realloc(void *ptr, size_t size);
 size_t mx_getsize(void * p);
+t_list *mx_create_node(void *data);
+void mx_push_front(t_list **list, void *data);
+void mx_push_back(t_list **list, void *data);
+
 
 //int mx_itoa(int num);
 
