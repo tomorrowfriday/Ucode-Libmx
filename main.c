@@ -527,26 +527,26 @@ int main(int argc, char *argv[]) {
     //     while (back_head)
     //         mx_pop_front(&back_head);
 
-    mx_printstr("\n\n----------------MX_POP_FRONT-------------------\n");
-        char *pop_front_str = "HEAD", *pop_front_str1 = "STR1", *pop_front_str2 = "STR2", *pop_front_str3 = "STR3";
-        t_list *pop_front_new_list = NULL;
-        mx_push_back(&pop_front_new_list, pop_front_str), mx_push_back(&pop_front_new_list, pop_front_str1), mx_push_back(&pop_front_new_list, pop_front_str2), mx_push_back(&pop_front_new_list, pop_front_str3);
-        mx_printstr("list before pop_front is | ");
-        for (int i = 0; pop_front_new_list; i++) {
-            char *buf = (char *)pop_front_new_list->data;
-            mx_printstr("\""); mx_printstr(buf); mx_printstr("\""); mx_printstr(" ");
-            mx_pop_front(&pop_front_new_list);
-        }
-        mx_printstr("\n");
-        mx_push_back(&pop_front_new_list, pop_front_str), mx_push_back(&pop_front_new_list, pop_front_str1), mx_push_back(&pop_front_new_list, pop_front_str2), mx_push_back(&pop_front_new_list, pop_front_str3);
-        mx_printstr("list after pop_front is without \"HEAD\" | ");
-        mx_pop_front(&pop_front_new_list);
-        for (int i = 0; pop_front_new_list; i++) {
-            char *buf = (char *)pop_front_new_list->data;
-            mx_printstr("\""); mx_printstr(buf); mx_printstr("\""); mx_printstr(" ");
-            mx_pop_front(&pop_front_new_list);
-        }
-        mx_printstr("\n");
+    // mx_printstr("\n\n----------------MX_POP_FRONT-------------------\n");
+    //     char *pop_front_str = "HEAD", *pop_front_str1 = "STR1", *pop_front_str2 = "STR2", *pop_front_str3 = "STR3";
+    //     t_list *pop_front_new_list = NULL;
+    //     mx_push_back(&pop_front_new_list, pop_front_str), mx_push_back(&pop_front_new_list, pop_front_str1), mx_push_back(&pop_front_new_list, pop_front_str2), mx_push_back(&pop_front_new_list, pop_front_str3);
+    //     mx_printstr("list before pop_front is | ");
+    //     for (int i = 0; pop_front_new_list; i++) {
+    //         char *buf = (char *)pop_front_new_list->data;
+    //         mx_printstr("\""); mx_printstr(buf); mx_printstr("\""); mx_printstr(" ");
+    //         mx_pop_front(&pop_front_new_list);
+    //     }
+    //     mx_printstr("\n");
+    //     mx_push_back(&pop_front_new_list, pop_front_str), mx_push_back(&pop_front_new_list, pop_front_str1), mx_push_back(&pop_front_new_list, pop_front_str2), mx_push_back(&pop_front_new_list, pop_front_str3);
+    //     mx_printstr("list after pop_front is without \"HEAD\" | ");
+    //     mx_pop_front(&pop_front_new_list);
+    //     for (int i = 0; pop_front_new_list; i++) {
+    //         char *buf = (char *)pop_front_new_list->data;
+    //         mx_printstr("\""); mx_printstr(buf); mx_printstr("\""); mx_printstr(" ");
+    //         mx_pop_front(&pop_front_new_list);
+    //     }
+    //     mx_printstr("\n");
 
     // mx_printstr("\n\n----------------MX_POP_BACK-------------------\n");
     //     char *pop_back_str = "HEAD", *pop_back_str1 = "STR1", *pop_back_str2 = "STR2", *pop_back_str3 = "STR3";
