@@ -8,6 +8,11 @@
 #include <fcntl.h>
 #include <stddef.h>
 
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+
 typedef struct s_list
 {
     void *data;

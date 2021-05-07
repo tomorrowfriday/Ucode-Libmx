@@ -1,38 +1,17 @@
 #include "libmx.h"
 
-int mx_file_len(const char *file) 
+static int mx_file_len(const char *file) 
 {
+    short fl = open(file, O_RDONLY);
+    short sz = 0;
     int len = 0;
-    FILE *fl;
-    fl = fopen(file, "r");
-    if (fl == NULL) return -1;
-    int sym;
-   while (1)
-   {
-        // Чтение одного байта из файла
-        sym = fgetc (fl);
-            len ++;
-        //Проверка на конец файла или ошибку чтения
-        if (sym == EOF)
-        {
-            // Проверяем что именно произошло: кончился файл
-            // или это ошибка чтения
-            if ( feof (fl) != 0)
-            {  
-                //Если файл закончился, выводим сообщение о завершении чтения
-                //и выходим из бесконечного цикла
-                break;
-            }
-            else
-            {
-                //Если при чтении произошла ошибка, выводим сообщение об
-                // ошибке и выходим из бесконечного цикла
-                return -1;
-            }
-        }
-        //Если файл не закончился, и не было ошибки чтения
-        //выводим код считанного символа на экран
-   }
-    fclose(fl);
-    return len - 1;
+    char buf;
+    sz = read(fl, &buf, 1);
+    while (sz > 0) 
+    {
+        sz = read(fl, &buf, 1);
+        len++;
+    }
+    close(fl);
+    return len;
 }
