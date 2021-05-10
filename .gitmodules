@@ -1,0 +1,3 @@
+[submodule "for"]
+	path = for
+	url = git@gitlab.ucode.world:ucode/libmx/skravets.git

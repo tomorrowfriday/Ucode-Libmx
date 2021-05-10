@@ -1,6 +1,6 @@
 #include "libmx.h"
 
-static int mx_file_len(const char *file) 
+int mx_file_len(const char *file) 
 {
     short fl = open(file, O_RDONLY);
     short sz = 0;
